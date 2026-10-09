@@ -1,7 +1,11 @@
+import Navbar from "../components/Navbar";
+
 export default function Home() {
   return (
-    <main className="min-h-screen px-6 py-20">
-      <div className="mx-auto flex min-h-[80vh] max-w-6xl items-center justify-center">
+    <main id="home" className="min-h-screen">
+      <Navbar />
+
+      <section className="flex min-h-screen items-center justify-center px-6 pt-24">
         <div className="glass rounded-3xl p-10 text-center">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
             Portfolio
@@ -19,7 +23,7 @@ export default function Home() {
             applications and AI-powered solutions.
           </p>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
