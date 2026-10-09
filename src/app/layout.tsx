@@ -33,9 +33,17 @@ export const metadata: Metadata = {
     title: "Omm Prakash Parida | Full Stack & AI Developer",
     description:
       "Building modern web applications and intelligent AI-powered solutions.",
-    url: "https://omm-portfolio-sigma.vercel.app",
+    url: "/",
     siteName: "Omm Prakash Portfolio",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Omm Prakash Parida — Full Stack & AI Developer",
+      },
+    ],
   },
 
   twitter: {
@@ -43,6 +51,7 @@ export const metadata: Metadata = {
     title: "Omm Prakash Parida | Full Stack & AI Developer",
     description:
       "Explore my full-stack projects, AI applications, and software development journey.",
+    images: ["/opengraph-image.png"],
   },
 
   robots: {
