@@ -41,7 +41,6 @@ function LinkedInIcon() {
 }
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t border-white/10 px-6 py-8">
@@ -95,7 +94,7 @@ export default function Footer() {
         <div className="my-6 h-px bg-white/10" />
 
         <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-zinc-500 sm:flex-row sm:text-left">
-          <p>© {currentYear} Omm Prakash Parida. All rights reserved.</p>
+          <p>© 2026 Omm Prakash Parida. All rights reserved.</p>
 
           <motion.p
             initial={{ opacity: 0 }}
