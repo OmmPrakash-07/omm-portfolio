@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -24,6 +23,10 @@ export const metadata: Metadata = {
   ],
 
   authors: [{ name: "Omm Prakash Parida" }],
+
+  verification: {
+    google: "inRq3HNqyEfiRijJ0EFJxfJ3lgIMolZQgwxwGBoZXNE",
+  },
 
   alternates: {
     canonical: "/",
