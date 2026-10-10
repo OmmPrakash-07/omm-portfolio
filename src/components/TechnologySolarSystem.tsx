@@ -217,7 +217,7 @@ export default function TechnologySolarSystem() {
 
           <img
             className="solar-portrait"
-            src="/images/omm.jpg"
+            src="/images/Omm.jpg"
             alt="Omm Prakash Parida"
           />
 
