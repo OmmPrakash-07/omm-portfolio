@@ -1,28 +1,36 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl = "https://omm-portfolio-sigma.vercel.app";
+const profileImage = `${siteUrl}/images/Omm.jpg`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://omm-portfolio-sigma.vercel.app"),
+  metadataBase: new URL(siteUrl),
 
   title: "Omm Prakash Parida | Full Stack & AI Developer",
 
   description:
-    "Explore the portfolio of Omm Prakash Parida, a developer building modern web applications, full-stack solutions, and AI-powered systems.",
+    "Explore the official portfolio of Omm Prakash Parida, a Full Stack Developer and AI & Agentic AI Developer building modern web applications and intelligent AI-powered systems.",
 
   applicationName: "Omm Portfolio",
 
   keywords: [
     "Omm Prakash Parida",
+    "Omm Prakash Parida Portfolio",
     "Full Stack Developer",
     "AI Developer",
+    "Agentic AI Developer",
     "Next.js Developer",
     "React Developer",
     "Python",
-    "Agentic AI",
+    "MERN Stack Developer",
     "Portfolio",
   ],
 
-  authors: [{ name: "Omm Prakash Parida" }],
+  authors: [{ name: "Omm Prakash Parida", url: siteUrl }],
+
+  creator: "Omm Prakash Parida",
+  publisher: "Omm Prakash Parida",
 
   verification: {
     google: "inRq3HNqyEfiRijJ0EFJxfJ3lgIMolZQgwxwGBoZXNE",
@@ -35,9 +43,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Omm Prakash Parida | Full Stack & AI Developer",
     description:
-      "Building modern web applications and intelligent AI-powered solutions.",
-    url: "/",
-    siteName: "Omm Prakash Portfolio",
+      "Explore the projects, skills, and work of Omm Prakash Parida, a Full Stack and AI Developer.",
+    url: siteUrl,
+    siteName: "Omm Prakash Parida Portfolio",
     type: "website",
     images: [
       {
@@ -60,7 +68,34 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
   },
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${siteUrl}/#person`,
+  name: "Omm Prakash Parida",
+  url: siteUrl,
+  image: {
+    "@type": "ImageObject",
+    url: profileImage,
+    contentUrl: profileImage,
+    caption: "Omm Prakash Parida",
+  },
+  jobTitle: "Full Stack & AI Developer",
+  description:
+    "Full Stack Developer working on modern web applications, backend APIs, and AI-powered software.",
+  sameAs: [
+    "https://github.com/OmmPrakash-07",
+    "https://www.linkedin.com/in/omm-prakash-parida/",
+    "https://www.instagram.com/genius_omm/",
+  ],
 };
 
 export default function RootLayout({
@@ -71,6 +106,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+
         <div className="ambient-background">
           <div className="grid-background" />
         </div>
