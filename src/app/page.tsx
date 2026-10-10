@@ -6,6 +6,7 @@ import Projects from "../components/Projects";
 import GitHubActivity from "../components/GitHubActivity";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import "../components/TechnologySolarSystem.css";
 
 export default function Home() {
   return (

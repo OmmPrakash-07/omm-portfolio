@@ -1,10 +1,10 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import TechnologySolarSystem from "./TechnologySolarSystem";
 
 const roles = [
   "Modern Web Applications",
@@ -47,120 +47,128 @@ export default function Hero() {
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/10 blur-[100px] md:h-[500px] md:w-[500px]" />
 
-      <div className="mx-auto w-full max-w-5xl text-center">
-        {/* Availability Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300"
-        >
-          <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-          Available for opportunities
-        </motion.div>
-
-        {/* Introduction */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-zinc-400"
-        >
-          Hello, I'm
-        </motion.p>
-
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl"
-        >
-          Omm Prakash
-          <span className="gradient-text block">Parida.</span>
-        </motion.h1>
-
-        {/* Animated Developer Roles */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-6 flex min-h-16 flex-wrap items-center justify-center gap-x-3 gap-y-2 text-lg text-zinc-300 sm:text-xl md:text-2xl"
-        >
-          <span>I turn ideas into</span>
-
-          <motion.span
-            key={roleIndex}
-            initial={{ opacity: 0, y: 12 }}
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-2">
+        <div className="text-center lg:text-left">
+          {/* Availability Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="gradient-text font-semibold"
+            transition={{ duration: 0.6 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300"
           >
-            {roles[roleIndex]}.
-          </motion.span>
-        </motion.div>
+            <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+            Available for opportunities
+          </motion.div>
 
-        {/* Hero Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mx-auto mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg"
-        >
-          I build modern web applications and intelligent AI-powered solutions,
-          combining full-stack engineering with LLMs, agentic AI workflows, and
-          automation. I enjoy exploring emerging technologies and turning ideas
-          into practical products that solve real-world problems.
-        </motion.p>
-
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55 }}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-        >
-          <Link
-            href="#projects"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-zinc-200 sm:w-auto"
+          {/* Introduction */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-zinc-400"
           >
-            Explore My Work
-            <ArrowRight
-              size={18}
-              className="transition-transform group-hover:translate-x-1"
-            />
-          </Link>
+            Hello, I'm
+          </motion.p>
 
-          <Link
-            href="#contact"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 font-medium text-white transition-all duration-300 hover:border-white/30 hover:bg-white/10 sm:w-auto"
+          {/* Name */}
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl"
           >
-            Get In Touch
-          </Link>
+            Omm Prakash
+            <span className="gradient-text block">Parida.</span>
+          </motion.h1>
 
-          <Link
-            href="https://github.com/OmmPrakash-07"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit my GitHub profile"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-medium text-white transition-all duration-300 hover:bg-white/10 sm:w-auto"
+          {/* Animated Developer Roles */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-6 flex min-h-16 flex-wrap items-center justify-center gap-x-3 gap-y-2 text-lg text-zinc-300 sm:text-xl md:text-2xl lg:justify-start"
           >
-            <GithubIcon size={18} />
-            GitHub
-          </Link>
-        </motion.div>
+            <span>I turn ideas into</span>
 
-        {/* Scroll Indicator */}
-        <motion.a
-          href="#about"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mx-auto mt-16 flex w-fit flex-col items-center gap-2 text-xs uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-white"
-        >
-          Scroll to explore
-          <ArrowDown size={16} className="animate-bounce" />
-        </motion.a>
+            <motion.span
+              key={roleIndex}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="gradient-text font-semibold"
+            >
+              {roles[roleIndex]}.
+            </motion.span>
+          </motion.div>
+
+          {/* Hero Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mx-auto mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg lg:mx-0"
+          >
+            I build modern web applications and intelligent AI-powered
+            solutions, combining full-stack engineering with LLMs, agentic AI
+            workflows, and automation. I enjoy exploring emerging technologies
+            and turning ideas into practical products that solve real-world
+            problems.
+          </motion.p>
+
+          {/* Action Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start"
+          >
+            <Link
+              href="#projects"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-zinc-200 sm:w-auto"
+            >
+              Explore My Work
+              <ArrowRight
+                size={18}
+                className="transition-transform group-hover:translate-x-1"
+              />
+            </Link>
+
+            <Link
+              href="#contact"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 font-medium text-white transition-all duration-300 hover:border-white/30 hover:bg-white/10 sm:w-auto"
+            >
+              Get In Touch
+            </Link>
+
+            <Link
+              href="https://github.com/OmmPrakash-07"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit my GitHub profile"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-medium text-white transition-all duration-300 hover:bg-white/10 sm:w-auto"
+            >
+              <GithubIcon size={18} />
+              GitHub
+            </Link>
+          </motion.div>
+
+          {/* Scroll Indicator */}
+          <motion.a
+            href="#about"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="mx-auto mt-16 flex w-fit flex-col items-center gap-2 text-xs uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-white lg:mx-0"
+          >
+            Scroll to explore
+            <ArrowDown size={16} className="animate-bounce" />
+          </motion.a>
+        </div>
+
+        {/* Animated Technology Solar System */}
+        <div className="flex w-full items-center justify-center">
+          <TechnologySolarSystem />
+        </div>
       </div>
     </section>
   );
