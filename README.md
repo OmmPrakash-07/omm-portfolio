@@ -187,6 +187,41 @@ Start the production server:
 npm run start
 ```
 
+
+## 🤖 AI Omm — Personal AI Assistant
+
+AI Omm is a planned AI-powered portfolio assistant designed to help visitors
+learn about Omm Prakash Parida, his projects, technologies, and professional
+interests.
+
+### Planned Features
+
+- AI-powered conversations in English, Hindi, and Hinglish.
+- Portfolio and project knowledge grounded in verified information.
+- Animated assistant interface.
+- Voice input and spoken AI responses.
+- Secure server-side AI API integration.
+- Responsive chat experience for desktop and mobile.
+
+### Knowledge Base
+
+The initial portfolio knowledge base is maintained in:
+
+`src/data/ai-omm-knowledge.ts`
+
+It contains profile information, project descriptions, technology lists,
+public links, and conversation guidelines.
+
+### Implementation Status
+
+- [x] Initial portfolio knowledge base
+- [ ] Secure AI text-chat API
+- [ ] AI chat interface
+- [ ] Voice conversation
+- [ ] Animated avatar
+- [ ] Production security and usage controls
+
+
 ## 👨‍💻 Author
 
 **Omm Prakash Parida**
