@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AIOmmChat from "../components/AIOmmChat";
 
 const siteUrl = "https://omm-portfolio-sigma.vercel.app";
 const profileImage = `${siteUrl}/images/Omm.jpg`;
@@ -118,6 +119,8 @@ export default function RootLayout({
         </div>
 
         {children}
+
+        <AIOmmChat />
       </body>
     </html>
   );

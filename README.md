@@ -2,7 +2,7 @@
 
 A modern, responsive, and animated developer portfolio built with **Next.js, TypeScript, Tailwind CSS, Framer Motion, Lucide React, and React Icons**.
 
-🌐 **Live Website:** [https://omm-portfolio-sigma.vercel.app/](https://omm-portfolio-sigma.vercel.app/)
+🌐 **Live Website:** [omm-portfolio-sigma.vercel.app](https://omm-portfolio-sigma.vercel.app/)
 
 ## 🚀 Tech Stack
 
@@ -11,7 +11,9 @@ A modern, responsive, and animated developer portfolio built with **Next.js, Typ
 - **Styling:** Tailwind CSS and custom CSS
 - **Animations:** Framer Motion and CSS animations
 - **Icons:** Lucide React and React Icons
+- **AI Integration:** Google Gemini API
 - **Deployment:** Vercel
+- **Version Control:** Git and GitHub
 
 ## ✨ Features
 
@@ -19,24 +21,20 @@ A modern, responsive, and animated developer portfolio built with **Next.js, Typ
 - Responsive desktop and mobile layouts
 - Animated navigation bar with mobile menu
 - Hero section with developer introduction and animated roles
-- About section
-- Technical skills showcase
-- **Interactive Technology Solar System with animated orbits**
+- About section and technical skills showcase
+- Interactive Technology Solar System with animated orbits
 - Real technology logos with recognizable brand colors
 - Clickable technology logos with descriptions
 - Pause and resume controls for orbit animations
 - Featured projects with GitHub and live demo links
 - Contact section with email and LinkedIn
-- Social media links
-- Resume PDF integration
+- Social media links and resume PDF integration
 - Dark-themed interface with ambient background effects
 - Smooth animations and interactive components
 - SEO metadata and canonical URL
-- Open Graph metadata for social sharing
-- Twitter/X card metadata
+- Open Graph and Twitter/X metadata
 - Custom social preview image
-- Responsive and accessible interactive controls
-- Reduced-motion support for the technology animation
+- Accessible interactive controls and reduced-motion support
 
 ## 🌌 Interactive Technology Solar System
 
@@ -45,7 +43,7 @@ The portfolio features an animated solar system that showcases my technology sta
 ### Features
 
 - **Four animated orbits:** Languages, frontend, backend, and AI and development tools.
-- **Real technology logos:** Recognizable logos instead of text abbreviations.
+- **Real technology logos:** Recognizable technology logos instead of text abbreviations.
 - **Interactive planets:** Click a technology logo to view its name and description.
 - **Hover tooltips:** Identify technologies by hovering over their logos.
 - **Animation controls:** Pause or resume the orbit animation.
@@ -65,7 +63,7 @@ The portfolio features an animated solar system that showcases my technology sta
 - React components and TypeScript
 - React Icons for technology logos
 - CSS keyframe animations for orbital motion
-- Interactive React state for technology selection
+- React state for technology selection and animation controls
 - Custom CSS for orbit styling, hover effects, and responsiveness
 
 ## 🧑‍💻 Featured Projects
@@ -84,11 +82,15 @@ The portfolio features an animated solar system that showcases my technology sta
 omm-portfolio/
 ├── public/
 │   ├── images/
-│   │   └── omm.jpg
+│   │   └── Omm.jpg
 │   ├── resume.pdf
 │   └── opengraph-image.png
 ├── src/
 │   ├── app/
+│   │   ├── api/
+│   │   │   └── ai-omm/
+│   │   │       └── chat/
+│   │   │           └── route.ts
 │   │   ├── layout.tsx
 │   │   ├── page.tsx
 │   │   └── globals.css
@@ -101,14 +103,19 @@ omm-portfolio/
 │   │   ├── Skills.tsx
 │   │   ├── Projects.tsx
 │   │   ├── Contact.tsx
-│   │   └── Footer.tsx
+│   │   ├── Footer.tsx
+│   │   └── AIOmmChat.tsx
+│   ├── data/
+│   │   └── ai-omm-knowledge.ts
 │   └── lib/
+├── .env.local
+├── .gitignore
 ├── package.json
 ├── tsconfig.json
 └── README.md
 ```
 
-*Note: The component names above illustrate the main structure. Your actual project may contain additional files or different filenames.*
+*Note: This illustrates the main project files. Your actual directory may contain additional files.*
 
 ## 🔍 SEO & Social Sharing
 
@@ -121,26 +128,72 @@ omm-portfolio/
 - [x] Search engine indexing directives
 - [x] Production build verification
 
+## 🤖 AI Omm — Personal AI Assistant
+
+AI Omm is a portfolio assistant designed to help visitors learn about Omm Prakash Parida, his projects, technologies, and professional interests.
+
+### Current Capabilities
+
+- Portfolio knowledge base containing profile and project information
+- Server-side chat API using the Google Gemini API
+- Configurable Gemini model
+- Conversation context sent to the AI API
+- Initial responsive chat interface
+- Loading indicators and error handling
+
+### Knowledge Base
+
+The portfolio knowledge base is maintained in:
+
+`src/data/ai-omm-knowledge.ts`
+
+It contains profile information, project descriptions, technology lists, public links, and conversation guidelines.
+
+### Environment Configuration
+
+Create a `.env.local` file in the project root and configure your Gemini API key:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-3.5-flash-lite
+```
+
+Replace the placeholder with your own valid API key. Never commit `.env.local` or expose your API key in frontend code, public repositories, or screenshots.
+
+Keep `.env.local` listed in `.gitignore`. Configure environment variables separately in Vercel before deploying the AI functionality.
+
+### AI Omm Implementation Status
+
+- [x] Initial portfolio knowledge base
+- [x] Server-side AI text-chat API
+- [x] Gemini API integration tested
+- [x] Initial chat interface component
+- [ ] Integrate the chat interface into the portfolio layout
+- [ ] Verify complete end-to-end chat functionality
+- [ ] Voice input and spoken AI responses
+- [ ] Animated avatar
+- [ ] Production security, rate limiting, and usage controls
+
 ## 📈 Project Status
 
-- [x] Step 1 — Project setup
-- [x] Step 2 — Design system
-- [x] Step 3 — Animated navbar
-- [x] Step 4 — Hero section
-- [x] Step 5 — About section
-- [x] Step 6 — Skills section
-- [x] Step 7 — Projects showcase
-- [x] Step 8 — Contact section
-- [x] Step 9 — Footer
-- [x] Step 10 — SEO and social sharing metadata
+- [x] Project setup and design system
+- [x] Animated navbar and mobile navigation
+- [x] Hero section with animated roles
+- [x] About section
+- [x] Skills section
+- [x] Projects showcase
+- [x] Contact section
+- [x] Footer
+- [x] SEO and social sharing metadata
 - [x] Resume PDF integration
-- [x] Mobile navigation improvements
-- [x] Production build verification
-- [x] Step 11 — Deployment
 - [x] Interactive Technology Solar System
 - [x] Animated technology orbits and real logos
 - [x] Clickable technology descriptions
 - [x] Orbit animation pause and resume controls
+- [x] Deployment to Vercel
+- [x] Production build verification
+- [x] AI Omm backend API implementation
+- [ ] AI Omm frontend integration and end-to-end verification
 
 ## ⚙️ Getting Started
 
@@ -157,13 +210,10 @@ Clone the repository:
 ```bash
 git clone https://github.com/OmmPrakash-07/omm-portfolio.git
 cd omm-portfolio
-```
-
-Install dependencies:
-
-```bash
 npm install
 ```
+
+Create `.env.local` if you plan to run AI Omm locally, then configure the environment variables described above.
 
 Start the development server:
 
@@ -186,41 +236,6 @@ Start the production server:
 ```bash
 npm run start
 ```
-
-
-## 🤖 AI Omm — Personal AI Assistant
-
-AI Omm is a planned AI-powered portfolio assistant designed to help visitors
-learn about Omm Prakash Parida, his projects, technologies, and professional
-interests.
-
-### Planned Features
-
-- AI-powered conversations in English, Hindi, and Hinglish.
-- Portfolio and project knowledge grounded in verified information.
-- Animated assistant interface.
-- Voice input and spoken AI responses.
-- Secure server-side AI API integration.
-- Responsive chat experience for desktop and mobile.
-
-### Knowledge Base
-
-The initial portfolio knowledge base is maintained in:
-
-`src/data/ai-omm-knowledge.ts`
-
-It contains profile information, project descriptions, technology lists,
-public links, and conversation guidelines.
-
-### Implementation Status
-
-- [x] Initial portfolio knowledge base
-- [ ] Secure AI text-chat API
-- [ ] AI chat interface
-- [ ] Voice conversation
-- [ ] Animated avatar
-- [ ] Production security and usage controls
-
 
 ## 👨‍💻 Author
 
