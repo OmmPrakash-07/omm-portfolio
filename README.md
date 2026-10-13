@@ -11,6 +11,7 @@ A modern, responsive, and animated developer portfolio built with **Next.js, Typ
 - **Styling:** Tailwind CSS and custom CSS
 - **Animations:** Framer Motion and CSS animations
 - **Icons:** Lucide React and React Icons
+- **PDF Preview:** React PDF
 - **AI Integration:** Google Gemini API
 - **Deployment:** Vercel
 - **Version Control:** Git and GitHub
@@ -29,6 +30,11 @@ A modern, responsive, and animated developer portfolio built with **Next.js, Typ
 - Featured projects with GitHub and live demo links
 - Contact section with email and LinkedIn
 - Social media links and resume PDF integration
+- Certificate showcase with PDF first-page previews
+- Automatic certificate preview rendering without manually creating PNG files
+- Original certificate PDFs available through external links
+- Animated certificate cards with hover effects
+- Horizontally scrolling certificate showcase with hidden scrollbar
 - Dark-themed interface with ambient background effects
 - Smooth animations and interactive components
 - SEO metadata and canonical URL
@@ -66,6 +72,48 @@ The portfolio features an animated solar system that showcases my technology sta
 - React state for technology selection and animation controls
 - Custom CSS for orbit styling, hover effects, and responsiveness
 
+## 🏆 Certificates
+
+The portfolio includes a certificate showcase for professional learning and achievements.
+
+### Features
+
+- PDF-based certificate previews rendered directly in the browser
+- First-page previews without the standard PDF viewer toolbar
+- No need to manually create a separate PNG image for every certificate
+- Original certificate PDFs remain accessible through external links
+- Consistent certificate card dimensions
+- Smooth hover scaling and subtle glow effects
+- Horizontal auto-sliding certificate cards
+- Hidden scrollbar for a cleaner interface
+- Responsive layout for desktop and mobile
+- Loading and error states for certificate previews
+
+### Adding a Certificate
+
+1. Add the certificate PDF to `public/certificates/`.
+2. Add its title, issuer, date, PDF path, and unique ID to `src/data/certificates.ts`.
+3. The preview component renders the first page automatically.
+4. No manually generated PNG preview is required.
+
+Example project structure:
+
+```text
+public/
+└── certificates/
+    ├── MERN.pdf
+    └── eduvate.pdf
+
+src/
+├── components/
+│   ├── CertificatePreview.tsx
+│   └── Certificates.tsx
+└── data/
+    └── certificates.ts
+```
+
+**Note:** Adding a PDF to the folder alone does not automatically register it in the certificate list. Add its details to the certificate data file as well.
+
 ## 🧑‍💻 Featured Projects
 
 | Project | Live Demo / Repository |
@@ -81,6 +129,9 @@ The portfolio features an animated solar system that showcases my technology sta
 ```text
 omm-portfolio/
 ├── public/
+│   ├── certificates/
+│   │   ├── MERN.pdf
+│   │   └── eduvate.pdf
 │   ├── images/
 │   │   └── Omm.jpg
 │   ├── resume.pdf
@@ -102,15 +153,19 @@ omm-portfolio/
 │   │   ├── About.tsx
 │   │   ├── Skills.tsx
 │   │   ├── Projects.tsx
+│   │   ├── Certificates.tsx
+│   │   ├── CertificatePreview.tsx
 │   │   ├── Contact.tsx
 │   │   ├── Footer.tsx
 │   │   └── AIOmmChat.tsx
 │   ├── data/
+│   │   ├── certificates.ts
 │   │   └── ai-omm-knowledge.ts
 │   └── lib/
 ├── .env.local
 ├── .gitignore
 ├── package.json
+├── package-lock.json
 ├── tsconfig.json
 └── README.md
 ```
@@ -138,7 +193,7 @@ AI Omm is a portfolio assistant designed to help visitors learn about Omm Prakas
 - Server-side chat API using the Google Gemini API
 - Configurable Gemini model
 - Conversation context sent to the AI API
-- Initial responsive chat interface
+- Responsive chat interface component
 - Loading indicators and error handling
 
 ### Knowledge Base
@@ -151,14 +206,14 @@ It contains profile information, project descriptions, technology lists, public 
 
 ### Environment Configuration
 
-Create a `.env.local` file in the project root and configure your Gemini API key:
+Create a `.env.local` file in the project root and configure your Gemini API credentials:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
-GEMINI_MODEL=gemini-3.5-flash-lite
+GEMINI_MODEL=your_supported_gemini_model
 ```
 
-Replace the placeholder with your own valid API key. Never commit `.env.local` or expose your API key in frontend code, public repositories, or screenshots.
+Replace the placeholders with valid values supported by your integration. Never commit `.env.local` or expose your API key in frontend code, public repositories, or screenshots.
 
 Keep `.env.local` listed in `.gitignore`. Configure environment variables separately in Vercel before deploying the AI functionality.
 
@@ -168,7 +223,6 @@ Keep `.env.local` listed in `.gitignore`. Configure environment variables separa
 - [x] Server-side AI text-chat API
 - [x] Gemini API integration tested
 - [x] Initial chat interface component
-- [ ] Integrate the chat interface into the portfolio layout
 - [ ] Verify complete end-to-end chat functionality
 - [ ] Voice input and spoken AI responses
 - [ ] Animated avatar
@@ -190,10 +244,13 @@ Keep `.env.local` listed in `.gitignore`. Configure environment variables separa
 - [x] Animated technology orbits and real logos
 - [x] Clickable technology descriptions
 - [x] Orbit animation pause and resume controls
+- [x] Certificate showcase and PDF previews
+- [x] Certificate hover animations
+- [x] Responsive certificate cards
 - [x] Deployment to Vercel
 - [x] Production build verification
 - [x] AI Omm backend API implementation
-- [ ] AI Omm frontend integration and end-to-end verification
+- [ ] Verify complete AI Omm frontend integration and end-to-end functionality
 
 ## ⚙️ Getting Started
 
@@ -215,7 +272,7 @@ npm install
 
 Create `.env.local` if you plan to run AI Omm locally, then configure the environment variables described above.
 
-Start the development server:
+### Development Server
 
 ```bash
 npm run dev
@@ -223,9 +280,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Production Build
+### TypeScript Check
 
-Build the application:
+```bash
+npx tsc --noEmit
+```
+
+### Production Build
 
 ```bash
 npm run build
@@ -248,4 +309,4 @@ npm run start
 
 ---
 
-Built with ❤️ using Next.js, TypeScript, and React.
+Built with ❤️ using Next.js, TypeScript, React, and modern web technologies.
