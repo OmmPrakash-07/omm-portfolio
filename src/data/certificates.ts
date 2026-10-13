@@ -36,7 +36,7 @@ export const certificates: Certificate[] = [
     title: "Robo-sumo event",
     issuer: "Kshitij 2025, IT Kharagpur ",
     date: "2025",
-    certificateUrl: "/certificates/Robo-sumo.pdf",
+    certificateUrl: "/certificates/Robo-Sumo.pdf",
   },
 
   {
